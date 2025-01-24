@@ -16,7 +16,7 @@ jobs:
     - name: Install Node.js and dependencies
       uses: actions/setup-node@v3
       with:
-        node-version: 16 # 确保 Node.js 版本兼容
+        node-version: 20 # 确保 Node.js 版本兼容
         cache: 'npm'
 
     - run: npm install # 安装项目依赖
