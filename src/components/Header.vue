@@ -1,30 +1,113 @@
-<script setup>
-
-</script>
-
 <template>
-  <header class="header">
+  <header class="header" ref="header">
+    <div class="header-backgroud"></div>
     <div class="header-container">
-      <!-- 左侧标题 -->
-      <div class="title">AirPods Pro 2</div>
-
-      <!-- 中间导航链接 -->
-      <nav class="nav">
-        <ul>
-          <li v-for="(item, index) in menuItems" :key="index" :class="{ active: activeIndex === index }" @click="setActive(index)">
-            {{ item }}
-          </li>
-        </ul>
+      <img class="logo" src="../assets/img/logo.svg"></img>
+      <nav class="navigation">
+        <slot name="navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </slot>
       </nav>
     </div>
   </header>
 </template>
 
+<script setup>
+import { onMounted, ref } from "vue";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const header = ref(null);
+
+onMounted(() => {
+  if (!header.value) {
+    console.error("🚨 `h1` 元素未正确加载");
+    return;
+  }
+
+  gsap.to(header.value, {
+    maxWidth: "100vw",
+    backgroundColor: "rgba(255, 255, 255, 0.09)",
+    scrollTrigger: {
+      trigger: header.value,
+      start: "0px",
+      end: "100px",
+      scrub: true, 
+    },
+  });
+});
+</script>
+
 <style scoped>
 .header {
-    background-color: #000; /* 黑色背景 */
-    color: #fff; /* 白色文字 */
-    padding: 10px 20px;
-    border-bottom: 1px solid #333; /* 底部边框 */
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  max-width: 980px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--divider-color);
+  transition: width 0.3s ease-out;
+}
+
+.header-backgroud {
+  backdrop-filter: saturate(180%) blur(20px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.header-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0 0.5rem;
+  z-index: 2;
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+.logo {
+  width: auto;
+  height: 2rem;
+  opacity: 0.92;
+  padding-top: 10px;
+}
+
+.navigation {
+  padding-top: 20px;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  margin-left: 1.5rem;
+  font-size: 0.8rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--text-normal-color);
+  line-height: 1;
+  font-weight: 400;
+}
+
+.navigation a:hover {
+  color: var(--text-active-color);
 }
 </style>
