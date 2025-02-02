@@ -1,12 +1,17 @@
 <template>
     <div ref="scrollContainer">
         <section class="parallax-section">
-            <h1 ref="title" class="title">Technology</h1>
+            <h1 ref="title" class="title">TechLiquid</h1>
+            <div class="spline-container" ref="title1">
+                <iframe src='https://my.spline.design/boxeshover-0744dc4e37c7d2236eeeabb0455baf01/' frameborder='0' width='100%' height='100%'></iframe>
+                <div class="overlay"></div>
+            </div>
         </section>
 
         <!-- 添加足够的内容高度，确保滚动生效 -->
         <section class="content">
-            <canvas ref="splineCanvas" class="spline-canvas"></canvas>
+            <h2>Scroll Down</h2>
+            <p>这里是滚动测试内容2...</p>
         </section>
 
         <section class="content">
@@ -15,7 +20,6 @@
         </section>
 
         <section class="content">
-            <h2 ref="title1">Scroll Down</h2>
             <p>这里是滚动测试内容3...</p>
         </section>
     </div>
@@ -25,60 +29,40 @@
 import { onMounted, ref } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Application } from "@splinetool/runtime"; 
 
 gsap.registerPlugin(ScrollTrigger);
 
 const scrollContainer = ref(null);
 const title = ref(null);
 const title1 = ref(null);
-const splineCanvas = ref(null);
 
-onMounted(async () => {
-//   if (!scrollContainer.value) {
-//     console.error("🚨 `data-scroll-container` 未正确加载");
-//     return;
-//   }
+onMounted(() => {
+    // 🚀 2. 确保 GSAP 只在 DOM 渲染后初始化
+    if (!title.value) {
+        console.error("🚨 `h1` 元素未正确加载");
+        return;
+    }
 
-//   const scroll = new LocomotiveScroll({
-//     el: scrollContainer.value,
-//     smooth: true,
-//   });
-    const spline = new Application(splineCanvas.value);
-    await spline.load("https://my.spline.design/boxeshover-0744dc4e37c7d2236eeeabb0455baf01/"); // 替换成你的 Spline URL
+    gsap.to(title.value, {
+        scale: 2,
+        opacity: 0,
+        scrollTrigger: {
+            trigger: title.value,
+            start: "-300vh",
+            end: "200vh",
+            scrub: true,
+        },
+    });
 
-  // 🚀 2. 确保 GSAP 只在 DOM 渲染后初始化
-  if (!title.value) {
-    console.error("🚨 `h1` 元素未正确加载");
-    return;
-  }
-
-  gsap.to(title.value, {
-  scale: 2,
-  opacity:0,
-  scrollTrigger: {
-    trigger: title.value,
-    start: "-300vh",
-    end: "200vh",
-    scrub: true,
-  },
-});
-
-gsap.to(title1.value, {
-  scale: 4,
-  opacity:1,
-  scrollTrigger: {
-    trigger: title.value,
-    start: "top 0px",
-    end: "top 1000px",
-    scrub: true,
-  },
-});
-
-//   // 🚀 3. 在窗口调整大小时更新滚动
-//   window.addEventListener("resize", () => {
-//     scroll.update();
-//   });
+    gsap.to(title1.value, {
+        opacity: 0,
+        scrollTrigger: {
+            trigger: title1.value,
+            start: "0vh",
+            end: "200vh",
+            scrub: true,
+        },
+    });
 });
 </script>
 
@@ -106,11 +90,17 @@ gsap.to(title1.value, {
 }
 
 .title {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 8rem;
-  font-weight: bold;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: bold;
+}
+
+.spline-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 </style>
