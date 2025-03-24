@@ -1,6 +1,6 @@
 <template>
     <section class="parallax-section">
-        <div class="container">
+
             <SplineContainer :scene="sceneUrl" :onLoad="onLoad" class="spline-container" />
             <div class="content">
                 <h4>スマートフォンアプリ開発</h4>
@@ -9,7 +9,7 @@
                     既存のシステムをタブレットやスマートフォンで活用したい方、またLINE、WeChat、小程序の開発も対応可能です。お気軽にご相談ください！
                 </p>
             </div>
-        </div>
+    
     </section>
 </template>
 
@@ -59,8 +59,8 @@ onMounted(() => {
 }
 
 .spline-container {
-    max-width: 90%;
-    height: 100%; 
+    position: absolute;
+    left: -30%;
 }
 
 .content {
