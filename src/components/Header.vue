@@ -35,11 +35,12 @@ onMounted(() => {
   gsap.to(header.value, {
     maxWidth: "100vw",
     backgroundColor: "rgba(255, 255, 255, 0.09)",
+    ease: "power2.out",
     scrollTrigger: {
-      trigger: header.value,
-      start: "0px",
-      end: "100px",
-      scrub: true, 
+      scroller: document.documentElement,
+      start: "top top",
+      end: "+=60vh",
+      scrub: 1,
     },
   });
 });
