@@ -1,15 +1,13 @@
 <template>
     <section class="parallax-section">
-
-            <SplineContainer :scene="sceneUrl" :onLoad="onLoad" class="spline-container" />
-            <div class="content">
-                <h4>スマートフォンアプリ開発</h4>
-                <p>スマートフォン、タブレット向けのアプリ開発を通じて、お客様のニーズにぴったりのソフトウェアを提供します。
-                    <br>
-                    既存のシステムをタブレットやスマートフォンで活用したい方、またLINE、WeChat、小程序の開発も対応可能です。お気軽にご相談ください！
-                </p>
-            </div>
-    
+        <SplineContainer :scene="sceneUrl" :onLoad="onLoad" class="spline-container" />
+        <div class="content">
+            <h4>アプリケーション開発</h4>
+            <p>iOS、Android、Web、すべてのプラットフォームで同期開発。洗練されたUI/UXで、ユーザーの期待を超える体験を提供します。
+                <br>
+                さらに、LINEやWeChatのミニアプリも開発可能。ユーザーのニーズを完全に満たすソリューションを提供します。
+            </p>
+        </div>
     </section>
 </template>
 
@@ -28,33 +26,32 @@ const iPhone1 = ref<SPEObject>();
 const iPhone2 = ref<SPEObject>();
 
 const onLoad = (splineApp: Application) => {
-  spline.value = splineApp;
-  iPhone1.value = splineApp.findObjectByName("iPhone1");
-  iPhone2.value = splineApp.findObjectByName("iPhone2");
+    spline.value = splineApp;
+    iPhone1.value = splineApp.findObjectByName("iPhone1");
+    iPhone2.value = splineApp.findObjectByName("iPhone2");
 }
 
 const triggerAnimation = () => {
-  iPhone1.value?.emitEvent("mouseDown");
-  iPhone2.value?.emitEvent("mouseDown");
+    iPhone1.value?.emitEvent("mouseDown");
+    iPhone2.value?.emitEvent("mouseDown");
 };
 
 onMounted(() => {
     ScrollTrigger.create({
-    trigger: ".content",
-    start: "top 80%", 
-    end: "bottom top", 
-    onEnter: () => triggerAnimation(), 
-    onLeave: () => console.log("离开了目标区域"), 
-    scrub: true, 
-  });
+        trigger: ".content",
+        start: "top 80%",
+        end: "bottom top",
+        onEnter: () => triggerAnimation(),
+        scrub: true,
+    });
 });
 </script>
 
 <style scoped>
 .container {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 10% 10% 0;
 }
 
@@ -65,9 +62,11 @@ onMounted(() => {
 
 .content {
     position: absolute;
-    max-width: 30%; 
+    max-width: 30%;
     padding: 20px;
     left: 60%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    display: grid;
+    text-align: start;
 }
 </style>

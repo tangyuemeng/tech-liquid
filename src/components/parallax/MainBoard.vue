@@ -2,7 +2,7 @@
     <div class="main">
         <LogoPage v-if="isReady"/>
         <MobilePage v-if="isReady"/>
-        <WebAppPage />
+        <!-- <WebAppPage /> -->
 
     </div>
 </template>

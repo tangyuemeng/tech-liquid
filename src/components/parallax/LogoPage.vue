@@ -13,7 +13,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplineContainer from "../3D/SplineContainer.vue";
 
 gsap.registerPlugin(ScrollTrigger);
-const sceneUrl = ref("https://prod.spline.design/LQMg5kDJmYArEpef/scene.splinecode");
+const sceneUrl = ref("https://prod.spline.design/AjVDHXoxdP418M7I/scene.splinecode");
 const logo = ref(null);
 const slogan = ref(null);
 
@@ -35,7 +35,7 @@ onMounted(() => {
     });
 
     gsap.to(slogan.value, {
-        scale: 1.6,
+        scale: 1.4,
         opacity: 1,
         ease: "power2.out",
         scrollTrigger: {
