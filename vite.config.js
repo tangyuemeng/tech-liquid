@@ -4,9 +4,5 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/tech-liquid/",
   plugins: [vue(), tailwindcss()],
-  build: {
-    outDir: "dist", 
-  },
 });

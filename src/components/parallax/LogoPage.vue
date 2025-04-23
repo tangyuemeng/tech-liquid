@@ -67,5 +67,4 @@ onMounted(() => {
     height: 100vh;
     opacity: 0.8;
 }
-
 </style>
