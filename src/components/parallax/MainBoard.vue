@@ -16,10 +16,6 @@ import MobilePage from "./MobilePage.vue";
 const isReady = ref(false);
 
 onMounted(() => {
-
-  isReady.value = true;  // 模拟模型加载完成，显示页面内容
+  isReady.value = true; 
 });
 </script>
-
-<style scoped>
-</style>
