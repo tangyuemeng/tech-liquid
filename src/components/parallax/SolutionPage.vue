@@ -2,7 +2,7 @@
     <section class="flex flex-col md:flex-row w-full h-full items-center justify-center bg-black" ref="triggerEl">
         <div class="items-center justify-center w-1/2 hidden md:block">
             <div class="relative overflow-hidden w-[800px] h-[800px] pointer-events-none items-center justify-center">
-                <Spline class="scale-100 absolute -top-[100px] -left-[140px]" :scene="sceneUrl"
+                <Spline class="absolute -top-[100px] -left-[140px]" :scene="sceneUrl"
                     style="width: 1080px; height: 1080px;" />
             </div>
         </div>

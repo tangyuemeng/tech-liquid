@@ -1,11 +1,20 @@
 <template>
     <section class="flex flex-col md:flex-row w-full h-full items-center justify-center bg-black" ref="triggerEl">
-        <div class="items-center justify-center w-full md:w-1/2">
+        <div class="items-center justify-center w-1/2 hidden md:block">
             <div
-                class="relative overflow-hidden md:w-[800px] md:h-[800px] h-[100vw] w-full pointer-events-none items-center justify-center">
-                <Spline class="md:ml-[200px] md:mt-[200px] md:scale-120 scale-50 absolute -top-[340px] -left-[340px]"
+                class="relative overflow-hidden w-[800px] h-[800px] pointer-events-none items-center justify-center">
+                <Spline class="absolute -top-[140px] -left-[140px]"
                     :scene="sceneUrl" :onLoad="onLoad" />
             </div>
+        </div>
+
+        <div class="w-full md:hidden">
+            <video autoplay muted loop playsinline
+                class="w-full h-full object-cover border-none">
+                <source
+                    src="https://firebasestorage.googleapis.com/v0/b/tl-studio-2a05d.firebasestorage.app/o/background_video%2Fweb.mp4?alt=media&token=3f545070-faf6-4a5b-9332-16b9a6028859"
+                    type="video/mp4">
+            </video>
         </div>
 
         <div class="text-start w-full md:w-[30%] p-4 z-20">

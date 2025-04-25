@@ -1,11 +1,19 @@
 <template>
-    <section class="flex flex-col md:flex-row w-full h-full items-center justify-center bg-black md:mb-30" ref="triggerEl">
-        <div class="items-center justify-center w-full md:w-1/2">
-            <div
-                class="relative overflow-hidden md:w-[800px] md:h-[800px] h-[100vw] w-full pointer-events-none items-center justify-center">
-                <Spline class="md:ml-[130px] md:mt-[200px] md:scale-100 scale-50 absolute -top-[340px] -left-[340px]"
-                    :scene="sceneUrl" :onLoad="onLoad" style="width: 1080px; height: 1080px;" />
+    <section class="flex flex-col md:flex-row w-full h-full items-center justify-center bg-black md:mb-30"
+        ref="triggerEl">
+        <div class="items-center justify-center w-1/2 hidden md:block">
+            <div class="relative overflow-hidden w-[800px] h-[800px] pointer-events-none items-center justify-center">
+                <Spline class="absolute -top-[140px] -left-[140px]" :scene="sceneUrl" :onLoad="onLoad"
+                    style="width: 1080px; height: 1080px;" />
             </div>
+        </div>
+
+        <div class="w-full md:hidden">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover border-none">
+                <source
+                    src="https://firebasestorage.googleapis.com/v0/b/tl-studio-2a05d.firebasestorage.app/o/background_video%2Fmobile.mp4?alt=media&token=42763cf6-fe76-4f93-a48b-21d6f288c3d3"
+                    type="video/mp4">
+            </video>
         </div>
 
         <div class="text-start w-full md:w-[30%] p-4 z-20">
@@ -39,7 +47,7 @@ const onLoad = (splineApp: Application) => {
     spline.value = splineApp;
     iPhone1.value = splineApp.findObjectByName("iPhone1");
     iPhone2.value = splineApp.findObjectByName("iPhone2");
-    splineApp.setZoom(0.7)
+    splineApp.setZoom(0.6)
 }
 
 const triggerAnimation = () => {
@@ -57,5 +65,3 @@ onMounted(() => {
     });
 });
 </script>
-<!-- 
-https://prod.spline.design/H5Y5xz1yr14oG1Vl/scene.splinecode -->
