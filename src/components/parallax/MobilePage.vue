@@ -1,9 +1,9 @@
 <template>
-    <section class="flex flex-col md:flex-row w-full h-full items-center justify-center bg-black" ref="triggerEl">
+    <section class="flex flex-col md:flex-row w-full h-full items-center justify-center bg-black md:mb-30" ref="triggerEl">
         <div class="items-center justify-center w-full md:w-1/2">
             <div
                 class="relative overflow-hidden md:w-[800px] md:h-[800px] h-[100vw] w-full pointer-events-none items-center justify-center">
-                <Spline class="md:ml-[120px] md:mt-[200px] md:scale-100 scale-50 absolute -top-[340px] -left-[340px]"
+                <Spline class="md:ml-[130px] md:mt-[200px] md:scale-100 scale-50 absolute -top-[340px] -left-[340px]"
                     :scene="sceneUrl" :onLoad="onLoad" style="width: 1080px; height: 1080px;" />
             </div>
         </div>
@@ -39,7 +39,7 @@ const onLoad = (splineApp: Application) => {
     spline.value = splineApp;
     iPhone1.value = splineApp.findObjectByName("iPhone1");
     iPhone2.value = splineApp.findObjectByName("iPhone2");
-    splineApp.setZoom(0.8)
+    splineApp.setZoom(0.7)
 }
 
 const triggerAnimation = () => {

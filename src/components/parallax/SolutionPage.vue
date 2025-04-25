@@ -11,7 +11,7 @@
             <video autoplay muted loop playsinline
                 class="w-full h-full object-cover border-none">
                 <source
-                    src="https://firebasestorage.googleapis.com/v0/b/tl-studio-2a05d.firebasestorage.app/o/background_video%2Fhome.mp4?alt=media&token=d936d1aa-a3db-49e0-a621-666b1d68cd3e"
+                    src="https://firebasestorage.googleapis.com/v0/b/tl-studio-2a05d.firebasestorage.app/o/background_video%2Fsolutions.mp4?alt=media&token=a0b83e6d-040c-4065-8124-cb5feb29750b"
                     type="video/mp4">
             </video>
         </div>
