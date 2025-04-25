@@ -2,7 +2,7 @@
     <section class="flex w-full md:h-screen h-[600px] items-center justify-center">
         <video autoplay muted loop playsinline class="w-full h-full object-cover border-none">
             <source
-                src="https://firebasestorage.googleapis.com/v0/b/tl-studio-2a05d.firebasestorage.app/o/background_video%2Foutput.mp4?alt=media&token=452d0df7-077d-4e0e-94b0-eeec41bddbe9"
+                src="https://firebasestorage.googleapis.com/v0/b/tl-studio-2a05d.firebasestorage.app/o/background_video%2Fhome.mp4?alt=media&token=d936d1aa-a3db-49e0-a621-666b1d68cd3e"
                 type="video/mp4">
         </video>
         <img class="w-[70%] fixed" ref="logo" src="../../assets/img/logo.svg"></img>
