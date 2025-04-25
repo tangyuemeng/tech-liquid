@@ -1,33 +1,24 @@
 <template>
     <section class="flex w-full md:h-screen h-[600px] items-center justify-center">
-        <div class="w-full h-full overflow-hidden fixed top-0 left-0 -z-10 relative">
-            <div class="relative overflow-hidden h-full w-full pointer-events-none items-center justify-center">
-                <Spline class="absolute -top-[340px] -left-[900px] md:top-0 md:-left-[400px]"
-                    :scene="sceneUrl" :onLoad="onLoad" style="width: 2880px; height: 1920px;" />
-            </div>
-        </div>
+        <video autoplay muted loop playsinline class="w-full h-full object-cover border-none">
+            <source
+                src="https://firebasestorage.googleapis.com/v0/b/tl-studio-2a05d.firebasestorage.app/o/background_video%2Foutput.mp4?alt=media&token=452d0df7-077d-4e0e-94b0-eeec41bddbe9"
+                type="video/mp4">
+        </video>
         <img class="w-[70%] fixed" ref="logo" src="../../assets/img/logo.svg"></img>
         <img class="w-[70%] absolute opacity-0" ref="slogan" src="../../assets/img/slogan.svg"></img>
     </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { onMounted, ref } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Spline from 'spline-vue/v3';
-import type { Application } from "@splinetool/runtime";
+
 
 gsap.registerPlugin(ScrollTrigger);
-const sceneUrl = ref("https://prod.spline.design/AjVDHXoxdP418M7I/scene.splinecode");
 const logo = ref(null);
 const slogan = ref(null);
-const spline = ref<Application>();
-
-const onLoad = (splineApp: Application) => {
-    spline.value = splineApp;
-    splineApp.setZoom(0.6)
-}
 
 onMounted(() => {
     if (!logo.value && !slogan.value) {
@@ -59,11 +50,3 @@ onMounted(() => {
     });
 });
 </script>
-
-<style scoped>
-canvas {
-    max-height: 100vh !important;
-    overflow: hidden;
-    object-fit: cover;
-}
-</style>
