@@ -6,27 +6,13 @@
 
         <ul class="flex flex-col text-lg font-bold border-t-1 border-white text-start">
             <li class="py-1 px-4">
-                <router-link to="/aboutus">Home</router-link>
-            </li>
-            <li class="py-1 px-4">
-                <router-link to="/schedule">About</router-link>
-            </li>
-            <li class="py-1 px-4">
-                <router-link to="/class">Services</router-link>
+                <router-link to="/">Home</router-link>
             </li>
             <li class="py-1 px-4">
                 <router-link to="/contact">Contact</router-link>
             </li>
         </ul>
 
-        <ul class="flex flex-col text-base font-bold mt-20 text-start">
-            <li class="py-1 px-4">
-                <router-link to="/faq"> {{ t('faq') }}</router-link>
-            </li>
-            <li class="py-1 px-4">
-                <router-link to="/contact"> {{ t('contactUs') }}</router-link>
-            </li>
-        </ul>
     </div>
 </template>
 
@@ -36,11 +22,11 @@ import { computed } from 'vue';
 
 const { locale, t } = useI18n();
 const changeLanguage = () => {
-  const newLang = locale.value === 'zh' ? 'ja' : 'zh'; 
-  locale.value = newLang;
+    const newLang = locale.value === 'zh' ? 'ja' : 'zh';
+    locale.value = newLang;
 };
 
 const currentLanguage = computed(() => {
-  return locale.value === 'zh' ? '中文' : '日本語'; 
+    return locale.value === 'zh' ? '中文' : '日本語';
 });
 </script>

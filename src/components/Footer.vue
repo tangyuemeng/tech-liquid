@@ -1,10 +1,11 @@
 <template>
 
     <div class="flex flex-col w-full items-center justify-center">
-        <h2 class="text-white mt-32 text-4xl md:text-4xl font-bold text-center my-4 p-2">Empowering Business with Elegant IT Solutions</h2>
+        <h2 class="text-white mt-32 text-4xl md:text-4xl font-bold text-center my-4 p-2">Empowering Business with
+            Elegant IT Solutions</h2>
         <p class="text-white text-base md:text-3xl text-center mb-2">{{ t('home.subTitle-1') }}</p>
         <p class="text-white text-base md:text-3xl text-center  mb-[50px]">{{ t('home.subTitle-2') }}</p>
-        <router-link to="/contact">
+        <router-link to="/contact" class="z-30">
             <button
                 class="text-black bg-white text-base font-bold px-4 py-2 rounded-full mb-[50px] hover:bg-white hover:text-black border-black border-1">
                 {{ t('contactUs') }}
@@ -34,7 +35,6 @@
                 <div class="flex flex-col md:flex-row items-center gap-4"><span>ⓒ 2024 TECH LIQUID Inc. All Rights
                         Reserved.</span>
                     <div class="flex gap-4">
-                        <router-link to="/terms-of-service" class="hover:underline">Terms of Use</router-link>
                         <router-link to="/privacy-policy" class="hover:underline">Privacy Policy</router-link>
                     </div>
                 </div>

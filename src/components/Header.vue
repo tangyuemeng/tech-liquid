@@ -4,12 +4,10 @@
     ref="header">
     <div class="absolute inset-0 w-full h-full backdrop-blur-[20px] backdrop-saturate-[180%]"></div>
     <div class="flex flex-row justify-between items-center z-20 w-full py-2 px-8">
-      <img class="opacity-92 h-[42px]" src="../assets/img/logo.svg"></img>
+      <router-link to="/"><img class="opacity-92 h-[42px]" src="../assets/img/logo.svg"></img></router-link>
       <ul class="flex text-sm z-30">
-        <li class="ml-6"><router-link to="/aboutus">Home</router-link></li>
-        <li class="ml-6"><router-link to="/aboutus">About</router-link></li>
-        <li class="ml-6"><router-link to="/aboutus">Services</router-link></li>
-        <li class="ml-6"><router-link to="/aboutus">Contact</router-link></li>
+        <li class="ml-6"><router-link to="/">Home</router-link></li>
+        <li class="ml-6"><router-link to="/contact">Contact</router-link></li>
         <li class="ml-6" @click="changeLanguage"><router-link>{{ currentLanguage }}</router-link></li>
       </ul>
     </div>

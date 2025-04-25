@@ -1,9 +1,10 @@
 <template>
     <section class="flex flex-col md:flex-row w-full h-full items-center justify-center bg-black" ref="triggerEl">
         <div class="items-center justify-center w-full md:w-1/2">
-            <div class="relative overflow-hidden md:w-[800px] md:h-[800px] h-[100vw] w-full pointer-events-none items-center justify-center">
+            <div
+                class="relative overflow-hidden md:w-[800px] md:h-[800px] h-[100vw] w-full pointer-events-none items-center justify-center">
                 <Spline class="md:ml-[200px] md:mt-[200px] md:scale-100 scale-50 absolute -top-[340px] -left-[340px]"
-                    :scene="sceneUrl" :onLoad="onLoad"  style="width: 1080px; height: 1080px;"/>
+                    :scene="sceneUrl" style="width: 1080px; height: 1080px;" />
             </div>
         </div>
 

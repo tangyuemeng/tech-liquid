@@ -1,6 +1,8 @@
 // src/router/index.js
 import { createRouter, createWebHashHistory } from "vue-router";
 import MainBoard from "../views/MainBoard.vue";
+import ContactPage from "../views/ContactPage.vue";
+import Privacy from "../views/Privacy.vue";
 
 const routes = [
   {
@@ -8,31 +10,16 @@ const routes = [
     name: "Home",
     component: MainBoard,
   },
-//   {
-//     path: "/aboutus",
-//     name: "About",
-//     component: AboutPage,
-//   },
-//   {
-//     path: "/contact",
-//     name: "Contact",
-//     component: ContactPage,
-//   },
-//   {
-//     path: "/faq",
-//     name: "FAQ",
-//     component: FAQPage,
-//   },
-//   {
-//     path: "/terms-of-service",
-//     name: "TermsOfUse",
-//     component: TermsOfUse,
-//   },
-//   {
-//     path: "/privacy-policy",
-//     name: "Privacy",
-//     component: Privacy,
-//   },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: ContactPage,
+  },
+  {
+    path: "/privacy-policy",
+    name: "Privacy",
+    component: Privacy,
+  },
 ];
 
 const router = createRouter({
@@ -40,7 +27,7 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 };
-  }
+  },
 });
 
 export default router;

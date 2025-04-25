@@ -1,9 +1,9 @@
 <template>
     <Header />
-        <LogoPage/>
-        <MobilePage />
-        <WebAppPage />
-        <SolutionPage />
+    <LogoPage />
+    <MobilePage />
+    <WebAppPage />
+    <SolutionPage />
     <Footer />
 </template>
 
