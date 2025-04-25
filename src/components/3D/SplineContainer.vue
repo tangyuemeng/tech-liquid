@@ -1,6 +1,6 @@
 <template>
     <div class="spline-container">
-        <Spline :scene="scene" :onLoad="onLoad"/>
+        <Spline :scene="scene" :onLoad="onLoad" style="width: 150%;"/>
     </div>
 </template>
 

@@ -1,0 +1,29 @@
+{
+    "language": "日本語",
+    "PrivacyPolicy": "プライバシーポリシー",
+    "TermsOUse": "利用規約",
+    "faq": "よくある質問",
+    "wechat": "公式WeChat",
+    "contactUs": "お問い合わせ",
+    "questions": "ご質問はありますか？",
+    "home": {
+      "subTitle-1": "ビジネスに力を",
+      "subTitle-2": "ITで洗練された未来を実現します。"
+    },
+    "applications": {
+      "title": "アプリケーション開発",
+      "subTitle-1": "iOS、Android、Web、すべてのプラットフォームで同期開発。洗練されたUI/UXで、ユーザーの期待を超える体験を提供します。",
+      "subTitle-2": "さらに、LINEやWeChatのミニアプリも開発可能。ユーザーのニーズを完全に満たすソリューションを提供します。"
+    },
+    "websites": {
+      "title": "ホームページ制作",
+      "subTitle-1": "iOS、Android、Web、すべてのプラットフォームで同期開発。洗練されたUI/UXで、ユーザーの期待を超える体験を提供します。",
+      "subTitle-2": "さらに、LINEやWeChatのミニアプリも開発可能。ユーザーのニーズを完全に満たすソリューションを提供します。"
+    },
+    "solutions": {
+      "title": "ITコンサルティング & AIソリューション",
+      "subTitle-1": "お客様の業務内容に応じて、ハードウェアの選定、パッケージソフトの導入、WEBアプリケーションやAIを活用した業務自動化ツールの開発など、",
+      "subTitle-2": "最適なソリューションをご提案いたします。"
+    }
+  }
+  

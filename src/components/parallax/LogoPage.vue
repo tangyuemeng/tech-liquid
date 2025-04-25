@@ -1,21 +1,33 @@
 <template>
-    <section class="parallax-section">
-        <img class="logo" ref="logo" src="../../assets/img/logo.svg"></img>
-        <img class="slogan" ref="slogan" src="../../assets/img/slogan.svg"></img>
-        <SplineContainer class="spline-container" :scene="sceneUrl"/>
+    <section class="flex w-full md:h-screen h-[600px] items-center justify-center">
+        <div class="w-full h-full overflow-hidden fixed top-0 left-0 -z-10 relative">
+            <div class="relative overflow-hidden h-full w-full pointer-events-none items-center justify-center">
+                <Spline class="absolute -top-[340px] -left-[900px] md:top-0 md:-left-[400px]"
+                    :scene="sceneUrl" :onLoad="onLoad" style="width: 2880px; height: 1920px;" />
+            </div>
+        </div>
+        <img class="w-[70%] fixed" ref="logo" src="../../assets/img/logo.svg"></img>
+        <img class="w-[70%] absolute opacity-0" ref="slogan" src="../../assets/img/slogan.svg"></img>
     </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted, ref } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplineContainer from "../3D/SplineContainer.vue";
+import Spline from 'spline-vue/v3';
+import type { Application } from "@splinetool/runtime";
 
 gsap.registerPlugin(ScrollTrigger);
 const sceneUrl = ref("https://prod.spline.design/AjVDHXoxdP418M7I/scene.splinecode");
 const logo = ref(null);
 const slogan = ref(null);
+const spline = ref<Application>();
+
+const onLoad = (splineApp: Application) => {
+    spline.value = splineApp;
+    splineApp.setZoom(0.6)
+}
 
 onMounted(() => {
     if (!logo.value && !slogan.value) {
@@ -49,22 +61,9 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.logo {
-    width: 70%;
-    height: auto;
-    position: fixed;
-}
-
-.slogan {
-    width: 70%;
-    height: auto;
-    position: absolute;
-    opacity: 0;
-}
-
-.spline-container {
-    width: 100vw;
-    height: 100vh;
-    opacity: 0.8;
+canvas {
+    max-height: 100vh !important;
+    overflow: hidden;
+    object-fit: cover;
 }
 </style>

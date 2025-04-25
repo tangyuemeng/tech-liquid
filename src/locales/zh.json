@@ -1,0 +1,29 @@
+{
+    "language": "中文",
+    "PrivacyPolicy": "隐私政策",
+    "TermsOUse": "使用条款",
+    "faq": "常见问题",
+    "wechat": "官方微信",
+    "contactUs": "联系我们",
+    "questions": "有任何问题？",
+    "home": {
+      "subTitle-1": "优雅之道",
+      "subTitle-2": "赋能数字革新"
+    },
+    "applications": {
+      "title": "移动应用开发",
+      "subTitle-1": "我们支持 iOS、Android、Web 等全平台同步开发。通过精致的 UI/UX 设计，为用户带来超越期待的体验。",
+      "subTitle-2": "此外，也支持开发 LINE 与 WeChat 的小程序，为您量身打造满足所有需求的解决方案。"
+    },
+    "websites": {
+      "title": "网页定制开发",
+      "subTitle-1": "为您量身定制专业网站，支持手机端自适应，让您的业务无缝触达每一位用户。",
+      "subTitle-2": "让您的网站不仅美观，更智能高效！"
+    },
+    "solutions": {
+      "title": "IT咨询与AI解决方案",
+      "subTitle-1": "根据您的业务需求，提供包括硬件选型、套装软件导入、网页应用开发。",
+      "subTitle-2": "基于AI的业务自动化工具开发等在内的全方位解决方案。"
+    }
+  }
+  
