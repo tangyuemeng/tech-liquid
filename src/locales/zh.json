@@ -6,6 +6,10 @@
     "wechat": "官方微信",
     "contactUs": "联系我们",
     "questions": "有任何问题？",
+    "meta": {
+      "title": "TECH LIQUID | 移动与网页应用开发 Creative Web and Smart phone application",
+      "dscription": "软件开发TECH LIQUID - 移动与网页应用开发"
+    },
     "home": {
       "subTitle-1": "以优雅之道",
       "subTitle-2": "赋能数字革新"

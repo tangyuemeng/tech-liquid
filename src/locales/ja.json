@@ -6,6 +6,10 @@
     "wechat": "公式WeChat",
     "contactUs": "お問い合わせ",
     "questions": "ご質問はありますか？",
+    "meta": {
+      "title": "TECH LIQUID | スマホ・ウェブアプリ開発 Creative Web and Smart phone application",
+      "dscription": "ソフトウェア開発会社TECH LIQUID - スマホアプリ・ホームページを制作します。スマートフォンへの対応もおまかせください。"
+    },
     "home": {
       "subTitle-1": "ビジネスに力を",
       "subTitle-2": "ITで洗練された未来を実現します。"
